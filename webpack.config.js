@@ -27,6 +27,7 @@ var getEntry = require('./getEntry');
 var compileConfig = require('./compile.config.json');
 var compile = require('./compile.js');
 compileConfig = compile(compileConfig);
+var alias = require('./alias');
 
 //  清理www目录
 rmdir('build');
@@ -88,7 +89,8 @@ module.exports = {
         publicPath
     },
     resolve: {
-        extensions: ['', '.js'],
+        alias: alias,
+        extensions: ['', '.js', '.css', '.scss', '.jade', '.png', '.jpg']
     },
     externals: {
         jquery: 'window.jQuery',
