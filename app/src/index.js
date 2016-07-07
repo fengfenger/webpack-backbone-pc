@@ -10,16 +10,18 @@ $(function(){
 var base = require('base-extend-backbone');
 
 var ItemView = Backbone.View.extend({
-  tagName: 'li'
+  tagName: 'li',
+  attributes:'cus'
 });
 
 var BodyView = Backbone.View.extend({
-  el: 'body'
+  el: 'body',
+
 });
 
 var item = new ItemView();
 var body = new BodyView();
 
-console.log(item.el);
-console.log(body.el);
+console.log(item.attributes)
+
 
